@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://lc072jsfttjg"]
+[gd_scene load_steps=8 format=4 uid="uid://lc072jsfttjg"]
 
 [ext_resource type="Texture2D" uid="uid://83qiy2p1jc7p" path="res://ground-tiles.png" id="1_br4y5"]
 [ext_resource type="Script" path="res://player.gd" id="1_rfo4t"]
 [ext_resource type="Texture2D" uid="uid://codcljckfp3el" path="res://tank.png" id="2_pp2gx"]
+[ext_resource type="Texture2D" uid="uid://dq5f3638aawax" path="res://tank-barrel.png" id="4_48rp4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dnc6"]
 texture = ExtResource("1_br4y5")
@@ -39,3 +40,11 @@ shape = SubResource("RectangleShape2D_pfxoe")
 
 [node name="Camera2D" type="Camera2D" parent="Tank"]
 zoom = Vector2(1.965, 1.965)
+
+[node name="BarrelPivot" type="Node2D" parent="Tank"]
+position = Vector2(1, 0)
+
+[node name="Barrel" type="Sprite2D" parent="Tank/BarrelPivot"]
+position = Vector2(21, 0)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_48rp4")
