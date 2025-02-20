@@ -29,7 +29,6 @@ motion_mode = 1
 script = ExtResource("1_rfo4t")
 speed = 100
 turnSpeed = 2
-barrelTurnSpeed = 1
 barrel = NodePath("BarrelPivot")
 
 [node name="Tank Body" type="Sprite2D" parent="Tank"]

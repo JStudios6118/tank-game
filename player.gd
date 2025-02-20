@@ -7,18 +7,20 @@ extends CharacterBody2D
 
 @export var barrel : Node2D
 
-func _physics_process(delta: float) -> void:
-	var target_rotation = (get_global_mouse_position() - barrel.global_position).angle()
+func _physics_process(delta):
+	var angle_to_mouse = rad_to_deg(get_angle_to(get_global_mouse_position()))
+	var barrelRotation = barrel.rotation_degrees
+	# Normalize the angle difference to be within [-180, 180]
+	var angle_diff = wrapf(angle_to_mouse - barrelRotation, -180, 180)
+	# Determine the rotation amount based on turn speed and delta time
+	var rotation_amount = barrelTurnSpeed * delta
 	
-	# Calculate the difference between the current rotation and the target rotation.
-	var angle_diff = target_rotation - rotation
-	if angle_diff > PI:
-		angle_diff -= PI * 2
-	elif angle_diff < -PI:
-		angle_diff += PI * 2
-		
-	# Gradually rotate the barrel towards the target rotation.
-	barrel.rotation += angle_diff * barrelTurnSpeed * delta
+	# Rotate the barrel based on the angle difference and rotation amount
+	if abs(angle_diff) > rotation_amount:
+		barrel.rotation_degrees += sign(angle_diff) * rotation_amount
+	else:
+		barrel.rotation_degrees = angle_to_mouse
+
 	
 	# Get the input direction and handle the rotation.
 	var direction := Input.get_axis("left", "right")

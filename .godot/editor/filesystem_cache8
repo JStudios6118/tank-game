@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1740005478
-ground-tiles.png::CompressedTexture2D::2375021478391000927::1740000516::1740000518::1::::<><>::
-icon.svg::CompressedTexture2D::3227539909917718244::1739998213::1739998220::1::::<><>::
-player.gd::GDScript::-1::1739999828::0::1::::<>CharacterBody2D<>::
-tank-barrel.png::CompressedTexture2D::8344570142080556559::1740005427::1740005478::1::::<><>::
-tank.png::CompressedTexture2D::5761819865560739723::1739999973::1739999984::1::::<><>::
-world.tscn::PackedScene::777782538609576044::1740001151::0::1::::<><>::uid://83qiy2p1jc7p::::res://ground-tiles.png<>res://player.gd<>uid://codcljckfp3el::::res://tank.png
-::res://aseprite/::1740000484
+::res://::1740017866
+ground-tiles.png::CompressedTexture2D::2375021478391000927::1740017291::1740017866::1::::<><>::
+icon.svg::CompressedTexture2D::3227539909917718244::1740017291::1740017866::1::::<><>::
+player.gd::GDScript::-1::1740017291::0::1::::<>CharacterBody2D<>::
+tank-barrel.png::CompressedTexture2D::8344570142080556559::1740017291::1740017866::1::::<><>::
+tank.png::CompressedTexture2D::5761819865560739723::1740017291::1740017866::1::::<><>::
+world.tscn::PackedScene::777782538609576044::1740017291::0::1::::<><>::uid://83qiy2p1jc7p::::res://ground-tiles.png<>res://player.gd<>uid://codcljckfp3el::::res://tank.png<>uid://dq5f3638aawax::::res://tank-barrel.png
+::res://aseprite/::1740017291
