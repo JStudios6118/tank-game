@@ -7,7 +7,6 @@ extends CharacterBody2D
 
 @export var barrel : Node2D
 
-var turning: String = "No"
 
 func _physics_process(delta):
 	var angle_to_mouse = rad_to_deg(get_angle_to(get_global_mouse_position()))
@@ -19,12 +18,7 @@ func _physics_process(delta):
 	
 	# Rotate the barrel based on the angle difference and rotation amount
 	if abs(angle_diff) > rotation_amount:
-		var turnExtra: int = 0
-		if turning == "Left":
-			turnExtra+=rotation_amount
-		elif turning == "Right":
-			turnExtra-=rotation_amount
-		barrel.rotation_degrees += sign(angle_diff) * (rotation_amount+turnExtra)
+		barrel.rotation_degrees += sign(angle_diff) * (rotation_amount)
 	else:
 		barrel.rotation_degrees = angle_to_mouse
 
@@ -32,16 +26,10 @@ func _physics_process(delta):
 	# Get the input direction and handle the rotation.
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		if direction < 0:
-			turning = "Left"
-		else:
-			turning = "Right"
-		$TankBody.rotate(direction * turnSpeed * delta)
-	else:
-		turning = "No"
+		$BodyPivot.rotate(direction * turnSpeed * delta)
 
 	if Input.is_action_pressed("forward"):
-		velocity = Vector2(cos(rotation), sin(rotation)) * speed
+		velocity = Vector2(cos($BodyPivot.rotation), sin($BodyPivot.rotation)) * speed
 	else:
 		velocity = Vector2.ZERO
 

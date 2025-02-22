@@ -69,7 +69,9 @@ speed = 100
 turnSpeed = 2
 barrel = NodePath("BarrelPivot")
 
-[node name="TankBody" type="AnimatedSprite2D" parent="Tank"]
+[node name="BodyPivot" type="Node2D" parent="Tank"]
+
+[node name="TankBody" type="AnimatedSprite2D" parent="Tank/BodyPivot"]
 position = Vector2(10, 0)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_3hi1r")
