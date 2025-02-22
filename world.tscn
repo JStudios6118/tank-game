@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://player.gd" id="1_rfo4t"]
 [ext_resource type="Texture2D" uid="uid://cpxrplidts7cy" path="res://ground-tiles.png" id="2_3sop1"]
 [ext_resource type="Texture2D" uid="uid://dq5f3638aawax" path="res://tank-barrel.png" id="4_48rp4"]
-[ext_resource type="Texture2D" uid="uid://mibtbgvdvmc6" path="res://pixilart-sprite (1).png" id="4_xqa60"]
+[ext_resource type="Texture2D" uid="uid://dx55tdgokbfh6" path="res://pixilart-sprite (1).png" id="4_xqa60"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sttiu"]
 texture = ExtResource("2_3sop1")

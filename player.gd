@@ -21,9 +21,9 @@ func _physics_process(delta):
 	if abs(angle_diff) > rotation_amount:
 		var turnExtra: int = 0
 		if turning == "Left":
-			turnExtra+=barrelTurnSpeed
+			turnExtra+=rotation_amount
 		elif turning == "Right":
-			turnExtra-=barrelTurnSpeed
+			turnExtra-=rotation_amount
 		barrel.rotation_degrees += sign(angle_diff) * (rotation_amount+turnExtra)
 	else:
 		barrel.rotation_degrees = angle_to_mouse
