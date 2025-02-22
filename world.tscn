@@ -1,12 +1,14 @@
 [gd_scene load_steps=13 format=4 uid="uid://lc072jsfttjg"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_rfo4t"]
-[ext_resource type="Texture2D" uid="uid://cpxrplidts7cy" path="res://ground-tiles.png" id="2_3sop1"]
 [ext_resource type="Texture2D" uid="uid://dq5f3638aawax" path="res://tank-barrel.png" id="4_48rp4"]
-[ext_resource type="Texture2D" uid="uid://dx55tdgokbfh6" path="res://pixilart-sprite (1).png" id="4_xqa60"]
+[ext_resource type="Texture2D" uid="uid://mibtbgvdvmc6" path="res://pixilart-sprite (1).png" id="4_xqa60"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5d86h"]
+load_path = "res://.godot/imported/ground-tiles.png-ab93b550287e0cddbebf4929d6781220.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sttiu"]
-texture = ExtResource("2_3sop1")
+texture = SubResource("CompressedTexture2D_5d86h")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
