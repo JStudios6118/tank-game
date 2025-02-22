@@ -16,7 +16,7 @@ func _physics_process(delta):
 	var angle_diff = wrapf(angle_to_mouse - barrelRotation, -180, 180)
 	# Determine the rotation amount based on turn speed and delta time
 	var rotation_amount = barrelTurnSpeed * delta
-	
+	#helow wrodsl
 	# Rotate the barrel based on the angle difference and rotation amount
 	if abs(angle_diff) > rotation_amount:
 		var turnExtra: int = 0
