@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed : int = 300
 @export var turnSpeed : int = 100
+@export var body_pivot : Node2D
 
 @export var barrelTurnSpeed : int = 100
 
@@ -26,10 +27,10 @@ func _physics_process(delta):
 	# Get the input direction and handle the rotation.
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		$BodyPivot.rotate(direction * turnSpeed * delta)
+		body_pivot.rotate(direction * turnSpeed * delta)
 
 	if Input.is_action_pressed("forward"):
-		velocity = Vector2(cos($BodyPivot.rotation), sin($BodyPivot.rotation)) * speed
+		velocity = Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * speed
 	else:
 		velocity = Vector2.ZERO
 
