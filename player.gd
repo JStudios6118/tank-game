@@ -36,7 +36,7 @@ func _physics_process(delta):
 			turning = "Left"
 		else:
 			turning = "Right"
-		rotate(direction * turnSpeed * delta)
+		$TankBody.rotate(direction * turnSpeed * delta)
 	else:
 		turning = "No"
 

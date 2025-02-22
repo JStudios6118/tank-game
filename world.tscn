@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_rfo4t"]
 [ext_resource type="Texture2D" uid="uid://dq5f3638aawax" path="res://tank-barrel.png" id="4_48rp4"]
-[ext_resource type="Texture2D" uid="uid://mibtbgvdvmc6" path="res://pixilart-sprite (1).png" id="4_xqa60"]
+[ext_resource type="Texture2D" uid="uid://dx55tdgokbfh6" path="res://pixilart-sprite (1).png" id="4_xqa60"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5d86h"]
 load_path = "res://.godot/imported/ground-tiles.png-ab93b550287e0cddbebf4929d6781220.ctex"
@@ -70,7 +70,7 @@ turnSpeed = 2
 barrel = NodePath("BarrelPivot")
 
 [node name="TankBody" type="AnimatedSprite2D" parent="Tank"]
-position = Vector2(18, 0)
+position = Vector2(10, 0)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_3hi1r")
 frame_progress = 0.14218
@@ -83,7 +83,6 @@ shape = SubResource("RectangleShape2D_pfxoe")
 zoom = Vector2(3, 3)
 
 [node name="BarrelPivot" type="Node2D" parent="Tank"]
-position = Vector2(7, 0)
 
 [node name="Barrel" type="Sprite2D" parent="Tank/BarrelPivot"]
 position = Vector2(11, 0)
