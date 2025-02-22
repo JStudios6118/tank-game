@@ -1,15 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://lc072jsfttjg"]
+[gd_scene load_steps=13 format=4 uid="uid://lc072jsfttjg"]
 
-[ext_resource type="Texture2D" uid="uid://83qiy2p1jc7p" path="res://ground-tiles.png" id="1_br4y5"]
 [ext_resource type="Script" path="res://player.gd" id="1_rfo4t"]
-[ext_resource type="Texture2D" uid="uid://cpxrplidts7cy" path="res://pixil-frame-1 (1).png" id="2_3sop1"]
+[ext_resource type="Texture2D" uid="uid://cpxrplidts7cy" path="res://ground-tiles.png" id="2_3sop1"]
 [ext_resource type="Texture2D" uid="uid://dq5f3638aawax" path="res://tank-barrel.png" id="4_48rp4"]
 [ext_resource type="Texture2D" uid="uid://mibtbgvdvmc6" path="res://pixilart-sprite (1).png" id="4_xqa60"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dnc6"]
-texture = ExtResource("1_br4y5")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sttiu"]
 texture = ExtResource("2_3sop1")
@@ -18,7 +12,6 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_acra7"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_6dnc6")
 sources/1 = SubResource("TileSetAtlasSource_sttiu")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyaq1"]
