@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://lc072jsfttjg"]
+[gd_scene load_steps=13 format=4 uid="uid://lc072jsfttjg"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_rfo4t"]
 [ext_resource type="Texture2D" uid="uid://cpxrplidts7cy" path="res://ground-tiles.png" id="2_3sop1"]
@@ -54,9 +54,6 @@ animations = [{
 
 [node name="World" type="Node2D"]
 
-[node name="Shadows" type="CanvasModulate" parent="."]
-color = Color(0.29219, 0.29219, 0.29219, 1)
-
 [node name="Tilemaps" type="Node2D" parent="."]
 
 [node name="Ground" type="TileMapLayer" parent="Tilemaps"]
@@ -90,13 +87,3 @@ position = Vector2(7, 0)
 position = Vector2(11, 0)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_48rp4")
-
-[node name="Light" type="PointLight2D" parent="Tank"]
-position = Vector2(8, -1)
-scale = Vector2(1.5, 1.5)
-energy = 0.22
-texture = ExtResource("5_mrgn5")
-
-[node name="Sun" type="DirectionalLight2D" parent="."]
-position = Vector2(-468, 2)
-energy = 0.0
