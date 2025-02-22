@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed : int = 300
 @export var turnSpeed : int = 100
 
-@export var barrelTurnSpeed : int = 100
+@export var barrelTurnSpeed : int = 110
 
 @export var barrel : Node2D
 
@@ -17,14 +17,14 @@ func _physics_process(delta):
 	# Determine the rotation amount based on turn speed and delta time
 	var rotation_amount = barrelTurnSpeed * delta
 	
-	# Rotate the barrel based on the angle difference and rotation amount
+	#Rotate the barrel based on the angle difference and rotation amount
 	if abs(angle_diff) > rotation_amount:
 		var turnExtra: int = 0
 		if turning == "Left":
-			turnExtra+=barrelTurnSpeed
+			turnExtra+=rotation_amount
 		elif turning == "Right":
-			turnExtra-=barrelTurnSpeed
-		barrel.rotation_degrees += sign(angle_diff) * (rotation_amount+turnExtra)
+			turnExtra-=rotation_amount
+		barrel.rotation_degrees += sign(angle_diff) * (rotation_amount)
 	else:
 		barrel.rotation_degrees = angle_to_mouse
 
