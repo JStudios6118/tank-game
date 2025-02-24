@@ -12,7 +12,8 @@ extends CharacterBody2D
 
 
 func _physics_process(delta):
-	nav_agent.target_position = _find_nearest()
+	var target = _find_nearest()
+	nav_agent.target_position = target
 	var angle_to_mouse = rad_to_deg(get_angle_to(nav_agent.get_next_path_position()))
 	var barrelRotation = barrel.rotation_degrees
 	# Normalize the angle difference to be within [-180, 180]
@@ -21,16 +22,17 @@ func _physics_process(delta):
 	var rotation_amount = barrelTurnSpeed * delta
 	
 	# Rotate the barrel based on the angle difference and rotation amount
-	if abs(angle_diff) > rotation_amount:
-		barrel.rotation_degrees += sign(angle_diff) * (rotation_amount)
-	else:
-		barrel.rotation_degrees = angle_to_mouse
+	#if abs(angle_diff) > rotation_amount:
+		#barrel.rotation_degrees += sign(angle_diff) * (rotation_amount)
+	#else:
+		#barrel.rotation_degrees = angle_to_mouse
 	
+	barrel.rotation_degrees = rad_to_deg(get_angle_to(nav_agent.get_next_path_position()))
 	
 	# Get the input direction and handle the rotation.
 	var direction
 	print(str(rad_to_deg(get_angle_to(nav_agent.get_next_path_position())) - body_pivot.rotation_degrees))
-	if rad_to_deg(get_angle_to(nav_agent.get_next_path_position())) - body_pivot.rotation_degrees > -180:
+	if rad_to_deg(get_angle_to(nav_agent.get_next_path_position())) - body_pivot.rotation_degrees < 0:
 		direction = -1
 	else:
 		direction = 1
