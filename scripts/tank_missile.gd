@@ -15,3 +15,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position.x += cos(direction) * speed
 	position.y += sin(direction) * speed
+
+
+func _on_timer_timeout():
+	queue_free()
