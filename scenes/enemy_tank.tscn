@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://b30q5lrk3qk38"]
 
-[ext_resource type="Script" path="res://enemy_tank.gd" id="1_2hlyn"]
+[ext_resource type="Script" path="res://scripts/enemy_tank.gd" id="1_2hlyn"]
 [ext_resource type="Texture2D" uid="uid://br7340g3ixsjj" path="res://textures/tank-animation.png" id="1_cux0d"]
 [ext_resource type="Texture2D" uid="uid://d3e5pggl1flkg" path="res://textures/tank-barrel.png" id="2_cabmt"]
 [ext_resource type="PackedScene" uid="uid://doxw0x2oabmru" path="res://scenes/tank_missile.tscn" id="2_ecots"]
@@ -48,7 +48,7 @@ script = ExtResource("1_2hlyn")
 body_pivot = NodePath("BodyPivot")
 tank_missile = ExtResource("2_ecots")
 nav_agent = NodePath("NavigationAgent2D")
-barrel = NodePath("BarrelPivot/BarrelEnd")
+barrel = NodePath("BarrelPivot")
 
 [node name="BodyPivot" type="Node2D" parent="."]
 
