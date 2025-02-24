@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqie2ok3jnju6"]
+[gd_scene load_steps=11 format=3 uid="uid://61k87q3453vd"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_cbmn7"]
-[ext_resource type="PackedScene" path="res://tank_missile.tscn" id="2_lhryp"]
-[ext_resource type="Texture2D" uid="uid://b6cbapvvoadmg" path="res://tank-animation.png" id="3_m5tqk"]
+[ext_resource type="PackedScene" uid="uid://doxw0x2oabmru" path="res://tank_missile.tscn" id="2_lhryp"]
+[ext_resource type="Texture2D" uid="uid://dx55tdgokbfh6" path="res://tank-animation.png" id="3_m5tqk"]
 [ext_resource type="Texture2D" uid="uid://dq5f3638aawax" path="res://tank-barrel.png" id="4_youh0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyaq1"]
@@ -76,3 +76,10 @@ texture = ExtResource("4_youh0")
 
 [node name="BarrelEnd" type="Node2D" parent="BarrelPivot"]
 position = Vector2(21.645, 0)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 168.0
+offset_top = -111.0
+offset_right = 208.0
+offset_bottom = -71.0
+text = "10"
