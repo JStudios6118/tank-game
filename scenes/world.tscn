@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://lc072jsfttjg"]
 
-[ext_resource type="Texture2D" uid="uid://dudqu77nyd15v" path="res://textures/ground-tiles.png" id="1_uxfnw"]
+[ext_resource type="Texture2D" uid="uid://cpxrplidts7cy" path="res://textures/ground-tiles.png" id="1_uxfnw"]
 [ext_resource type="PackedScene" uid="uid://dqie2ok3jnju6" path="res://scenes/tank.tscn" id="2_eb5ah"]
 [ext_resource type="PackedScene" uid="uid://b30q5lrk3qk38" path="res://enemy_tank.tscn" id="2_wflj3"]
 
