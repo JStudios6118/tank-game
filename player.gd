@@ -37,8 +37,8 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("shoot"):
 		var temp = tank_missile.instantiate()
-		temp.global_position = $BarrelEnd.global_position
-		temp.global_rotation = $BarrelEnd.global_rotation
+		temp.global_position = $BarrelPivot/BarrelEnd.global_position
+		temp.global_rotation = $BarrelPivot/BarrelEnd.global_rotation
 		get_tree().root.add_child(temp)
 
 
