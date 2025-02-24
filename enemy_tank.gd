@@ -29,7 +29,7 @@ func _physics_process(delta):
 	
 	# Get the input direction and handle the rotation.
 	var direction
-	if rad_to_deg(get_angle_to(nav_agent.get_next_path_position())) > 90:
+	if rad_to_deg(get_angle_to(nav_agent.get_next_path_position())) < 180:
 		direction = 1
 	else:
 		direction = -1
