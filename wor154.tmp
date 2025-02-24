@@ -70,7 +70,6 @@ speed = 100
 turnSpeed = 2
 body_pivot = NodePath("BodyPivot")
 tank_missile = ExtResource("2_07u0h")
-barrelTurnSpeed = null
 barrel = NodePath("BarrelPivot")
 
 [node name="BodyPivot" type="Node2D" parent="Tank"]
