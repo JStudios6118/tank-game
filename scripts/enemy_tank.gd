@@ -26,18 +26,21 @@ func _physics_process(delta):
 		#barrel.rotation_degrees += sign(angle_diff) * (rotation_amount)
 	#else:
 		#barrel.rotation_degrees = angle_to_mouse
+	var body_rot = body_pivot.rotation_degrees
+	var next_pos = rad_to_deg(get_angle_to(nav_agent.get_next_path_position()))
+	# Get the input direction and handle the rotation
 	
-	barrel.rotation_degrees = rad_to_deg(get_angle_to(nav_agent.get_next_path_position()))
+	angle_diff = wrapf(next_pos - body_rot, -180, 180)
+	# Determine the rotation amount based on turn speed and delta time
+	rotation_amount = turnSpeed * delta
 	
-	# Get the input direction and handle the rotation.
-	var direction
-	print(str(rad_to_deg(get_angle_to(nav_agent.get_next_path_position())) - body_pivot.rotation_degrees))
-	if rad_to_deg(get_angle_to(nav_agent.get_next_path_position())) - body_pivot.rotation_degrees > 0:
-		direction = 1
+	# Rotate the barrel based on the angle difference and rotation amount
+	if abs(angle_diff) > rotation_amount:
+		body_pivot.rotation_degrees += sign(angle_diff) * turnSpeed
 	else:
-		direction = -1
-	if direction:
-		body_pivot.rotate(direction * turnSpeed * delta)
+		body_pivot.rotation_degrees = next_pos
+		
+	print(body_pivot.global_rotation_degrees)
 	
 	
 	velocity = Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * speed
