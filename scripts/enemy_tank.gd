@@ -32,10 +32,10 @@ func _physics_process(delta):
 	# Get the input direction and handle the rotation.
 	var direction
 	print(str(rad_to_deg(get_angle_to(nav_agent.get_next_path_position())) - body_pivot.rotation_degrees))
-	if rad_to_deg(get_angle_to(nav_agent.get_next_path_position())) - body_pivot.rotation_degrees < 0:
-		direction = -1
-	else:
+	if rad_to_deg(get_angle_to(nav_agent.get_next_path_position())) - body_pivot.rotation_degrees > 0:
 		direction = 1
+	else:
+		direction = -1
 	if direction:
 		body_pivot.rotate(direction * turnSpeed * delta)
 	

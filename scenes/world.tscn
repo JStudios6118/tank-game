@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://lc072jsfttjg"]
 
-[ext_resource type="Texture2D" uid="uid://cpxrplidts7cy" path="res://textures/ground-tiles.png" id="1_uxfnw"]
+[ext_resource type="Texture2D" uid="uid://c6cm66enuutp7" path="res://textures/ground-tiles.png" id="1_uxfnw"]
 [ext_resource type="PackedScene" uid="uid://dqie2ok3jnju6" path="res://scenes/tank.tscn" id="2_eb5ah"]
 [ext_resource type="PackedScene" uid="uid://bw78a4kj3coyc" path="res://scenes/enemy_tank.tscn" id="2_h7g41"]
 
@@ -32,5 +32,5 @@ tile_set = SubResource("TileSet_acra7")
 [node name="Tank" parent="." instance=ExtResource("2_eb5ah")]
 
 [node name="EnemyTank" parent="." instance=ExtResource("2_h7g41")]
-position = Vector2(205, -7)
+position = Vector2(75, 0)
 speed = 100
