@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqie2ok3jnju6"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_cbmn7"]
+[ext_resource type="PackedScene" path="res://tank_missile.tscn" id="2_lhryp"]
+[ext_resource type="Texture2D" uid="uid://b6cbapvvoadmg" path="res://tank-animation.png" id="3_m5tqk"]
+[ext_resource type="Texture2D" uid="uid://dq5f3638aawax" path="res://tank-barrel.png" id="4_youh0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyaq1"]
+atlas = ExtResource("3_m5tqk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4k3k"]
+atlas = ExtResource("3_m5tqk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23tum"]
+atlas = ExtResource("3_m5tqk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swgns"]
+atlas = ExtResource("3_m5tqk")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3hi1r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyaq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4k3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23tum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swgns")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfxoe"]
+
+[node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("body_pivot", "barrel")]
+motion_mode = 1
+script = ExtResource("1_cbmn7")
+speed = 100
+turnSpeed = 2
+body_pivot = NodePath("BodyPivot")
+tank_missile = ExtResource("2_lhryp")
+barrel = NodePath("BarrelPivot")
+
+[node name="BodyPivot" type="Node2D" parent="."]
+
+[node name="TankBody" type="AnimatedSprite2D" parent="BodyPivot"]
+position = Vector2(10, 0)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_3hi1r")
+frame_progress = 0.14218
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(9, 0)
+shape = SubResource("RectangleShape2D_pfxoe")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="BarrelPivot" type="Node2D" parent="."]
+
+[node name="Barrel" type="Sprite2D" parent="BarrelPivot"]
+position = Vector2(11, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_youh0")
+
+[node name="BarrelEnd" type="Node2D" parent="BarrelPivot"]
+position = Vector2(21.645, 0)
