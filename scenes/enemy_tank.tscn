@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b30q5lrk3qk38"]
+[gd_scene load_steps=11 format=3 uid="uid://bw78a4kj3coyc"]
 
 [ext_resource type="Script" path="res://scripts/enemy_tank.gd" id="1_2hlyn"]
-[ext_resource type="Texture2D" uid="uid://br7340g3ixsjj" path="res://textures/tank-animation.png" id="1_cux0d"]
-[ext_resource type="Texture2D" uid="uid://d3e5pggl1flkg" path="res://textures/tank-barrel.png" id="2_cabmt"]
+[ext_resource type="Texture2D" uid="uid://b6cbapvvoadmg" path="res://textures/tank-animation.png" id="1_cux0d"]
+[ext_resource type="Texture2D" uid="uid://dq5f3638aawax" path="res://textures/tank-barrel.png" id="2_cabmt"]
 [ext_resource type="PackedScene" uid="uid://doxw0x2oabmru" path="res://scenes/tank_missile.tscn" id="2_ecots"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyaq1"]
@@ -72,4 +72,6 @@ texture = ExtResource("2_cabmt")
 position = Vector2(21.645, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 1.0
+simplify_path = true
 debug_enabled = true

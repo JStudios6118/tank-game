@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqie2ok3jnju6"]
+[gd_scene load_steps=15 format=3 uid="uid://dqie2ok3jnju6"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_cbmn7"]
 [ext_resource type="PackedScene" uid="uid://doxw0x2oabmru" path="res://scenes/tank_missile.tscn" id="2_lhryp"]
@@ -47,14 +47,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfxoe"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x6og8"]
-atlas = ExtResource("7_et6yw")
-region = Rect2(0, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qbaxq"]
-atlas = ExtResource("7_et6yw")
-region = Rect2(0, 0, 8, 8)
-
 [node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("body_pivot", "barrel")]
 motion_mode = 1
 script = ExtResource("1_cbmn7")
@@ -86,6 +78,7 @@ offset_top = -107.0
 offset_right = 192.0
 offset_bottom = 107.0
 script = ExtResource("4_08ukh")
+ammo_indicator_icon = ExtResource("7_et6yw")
 
 [node name="ControlMeter" type="ProgressBar" parent="Camera2D/ui"]
 layout_mode = 0
@@ -113,16 +106,6 @@ offset_top = 201.0
 offset_right = 192.0
 offset_bottom = 209.0
 theme_override_constants/separation = 1
-
-[node name="AmmoSlot" type="TextureRect" parent="Camera2D/ui/AmmoBar"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_x6og8")
-stretch_mode = 5
-
-[node name="AmmoSlot2" type="TextureRect" parent="Camera2D/ui/AmmoBar"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_qbaxq")
-stretch_mode = 6
 
 [node name="BarrelPivot" type="Node2D" parent="."]
 
