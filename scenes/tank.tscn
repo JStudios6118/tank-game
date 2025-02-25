@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_cbmn7"]
 [ext_resource type="PackedScene" uid="uid://doxw0x2oabmru" path="res://scenes/tank_missile.tscn" id="2_lhryp"]
-[ext_resource type="Texture2D" uid="uid://b6cbapvvoadmg" path="res://textures/tank-animation.png" id="3_m5tqk"]
+[ext_resource type="Texture2D" uid="uid://br7340g3ixsjj" path="res://textures/tank-animation.png" id="3_m5tqk"]
 [ext_resource type="Script" path="res://scenes/player_ui_manager.gd" id="4_08ukh"]
-[ext_resource type="Theme" uid="uid://b5reeok6vyya5" path="res://controlMeter.tres" id="4_jm0n5"]
+[ext_resource type="Theme" uid="uid://xycgxu0mpq21" path="res://controlMeter.tres" id="4_jm0n5"]
 [ext_resource type="Theme" uid="uid://cye6bvpwxjlc3" path="res://resources/health.tres" id="4_w4t3o"]
-[ext_resource type="Texture2D" uid="uid://dq5f3638aawax" path="res://textures/tank-barrel.png" id="4_youh0"]
-[ext_resource type="Texture2D" uid="uid://ckwlndxdarxqa" path="res://textures/ammo_indicator.png" id="7_et6yw"]
+[ext_resource type="Texture2D" uid="uid://d3e5pggl1flkg" path="res://textures/tank-barrel.png" id="4_youh0"]
+[ext_resource type="Texture2D" uid="uid://eqent0sqxe2j" path="res://textures/ammo_indicator.png" id="7_et6yw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyaq1"]
 atlas = ExtResource("3_m5tqk")
