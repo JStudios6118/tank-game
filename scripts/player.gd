@@ -1,36 +1,43 @@
 extends CharacterBody2D
 
-@export var speed : int
-@export var turnSpeed : int
+@export var speed : int = 100
+@export var turn_speed : int = 10
 @export var body_pivot : Node2D
 @export var tank_missile : PackedScene
-
-@export var barrelTurnSpeed : int
-
+@export var barrel_turn_speed : int = 1
 @export var barrel : Node2D
+
+
+var angle_to_mouse : float
+var barrel_rotation : float
+var angle_diff : float
+var rotation_amount : float
+
+
 
 func _ready():
 	add_to_group("players")
 
 func _physics_process(delta):
-	var angle_to_mouse = rad_to_deg(get_angle_to(get_global_mouse_position()))
-	var barrelRotation = barrel.rotation_degrees
+	angle_to_mouse = rad_to_deg(get_angle_to(get_global_mouse_position()))
+	barrel_rotation = barrel.rotation_degrees
 	# Normalize the angle difference to be within [-180, 180]
-	var angle_diff = wrapf(angle_to_mouse - barrelRotation, -180, 180)
+	angle_diff = wrapf(angle_to_mouse - barrel_rotation, -180, 180)
 	# Determine the rotation amount based on turn speed and delta time
-	var rotation_amount = barrelTurnSpeed * delta
+	rotation_amount = barrel_turn_speed * delta
 	
 	# Rotate the barrel based on the angle difference and rotation amount
 	if abs(angle_diff) > rotation_amount:
-		barrel.rotation_degrees += sign(angle_diff) * (rotation_amount)
+		barrel.rotation_degrees += angle_diff * rotation_amount
+	
 	else:
 		barrel.rotation_degrees = angle_to_mouse
-
+	
 	
 	# Get the input direction and handle the rotation.
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		body_pivot.rotate(direction * turnSpeed * delta)
+		body_pivot.rotate(direction * turn_speed * delta)
 
 	if Input.is_action_pressed("forward"):
 		velocity = Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * speed
