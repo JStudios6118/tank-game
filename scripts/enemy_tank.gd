@@ -11,6 +11,7 @@ extends CharacterBody2D
 
 var next_waypoint: Vector2 = Vector2.ZERO
 var retreat : int = 0
+var closest
 
 func _physics_process(delta):
 	var target = _find_nearest()
@@ -25,8 +26,10 @@ func _physics_process(delta):
 	# Determine the rotation amount based on turn speed and delta time
 	var rotation_amount = turnSpeed * delta
 	
+	
 	# Rotate the barrel based on the angle difference and rotation amount
-	barrel.rotation = get_angle_to(target)
+	barrel.rotation = get_angle_to(closest)
+	
 	
 	if target != position:
 		
@@ -57,7 +60,7 @@ func _physics_process(delta):
 func _find_nearest():
 	var dist
 	var current
-	var closest
+	closest
 	var mindist = 99999
 	
 	
@@ -75,7 +78,7 @@ func _find_nearest():
 	if mindist < 99999 and mindist > 100:
 		retreat = 0
 		return closest
-	elif mindist > 50 and retreat == 0:
+	else:
 		return position
 	#else:
 		#retreat = 1
