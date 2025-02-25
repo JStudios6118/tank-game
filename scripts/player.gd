@@ -29,7 +29,7 @@ func _physics_process(delta):
 	# Rotate the barrel based on the angle difference and rotation amount
 	if abs(angle_diff) > rotation_amount:
 		barrel.rotation_degrees += angle_diff * rotation_amount
-	
+		print(angle_diff * rotation_amount)
 	else:
 		barrel.rotation_degrees = angle_to_mouse
 	
