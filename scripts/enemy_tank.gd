@@ -17,7 +17,7 @@ func _physics_process(delta):
 	
 	
 	var body_rot = body_pivot.rotation_degrees
-	var next_pos = rad_to_deg(get_angle_to(next_waypoint))
+	var next_pos = rad_to_deg(get_angle_to(nav_agent.get_next_path_position()))
 	# Get the input direction and handle the rotation
 	
 	var angle_diff = wrapf(next_pos - body_rot, -180, 180)
@@ -35,7 +35,7 @@ func _physics_process(delta):
 		body_pivot.rotation_degrees = next_pos
 	
 	
-		velocity = Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * speed
+	velocity = Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * speed
 	
 	#else:
 		#velocity = Vector2(0,0)
