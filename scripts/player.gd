@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var turn_speed : int = 10
 @export var body_pivot : Node2D
 @export var tank_missile : PackedScene
-@export var barrel_turn_speed : int = 1
+@export var barrel_turn_speed : int = 100
 @export var barrel : Node2D
 
 
@@ -12,6 +12,7 @@ var angle_to_mouse : float
 var barrel_rotation : float
 var angle_diff : float
 var rotation_amount : float
+var dir : int
 
 func _physics_process(delta):
 	angle_to_mouse = rad_to_deg(get_angle_to(get_global_mouse_position()))
@@ -22,9 +23,16 @@ func _physics_process(delta):
 	rotation_amount = barrel_turn_speed * delta
 	
 	# Rotate the barrel based on the angle difference and rotation amount
+	
+	if angle_diff > 0:
+		dir = 1
+	else:
+		dir = -1
+	
+	
 	if abs(angle_diff) > rotation_amount:
-		barrel.rotation_degrees += angle_diff * rotation_amount
-		print(angle_diff * rotation_amount)
+		barrel.rotation_degrees += rotation_amount * dir
+		
 	else:
 		barrel.rotation_degrees = angle_to_mouse
 	
