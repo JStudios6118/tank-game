@@ -45,10 +45,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfxoe"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_04j33"]
 
 [node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("body_pivot", "barrel")]
 motion_mode = 1
+wall_min_slide_angle = 0.785398
 script = ExtResource("1_cbmn7")
 speed = 100
 turnSpeed = 2
@@ -65,7 +66,7 @@ sprite_frames = SubResource("SpriteFrames_3hi1r")
 frame_progress = 0.14218
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_pfxoe")
+shape = SubResource("CircleShape2D_04j33")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
