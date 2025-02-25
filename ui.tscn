@@ -7,6 +7,7 @@
 
 [node name="ui" type="Control"]
 layout_mode = 3
+anchors_preset = 0
 offset_left = -191.0
 offset_top = -107.0
 offset_right = 192.0
