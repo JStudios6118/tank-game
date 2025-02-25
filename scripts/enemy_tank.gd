@@ -73,13 +73,13 @@ func _find_nearest():
 	print(retreat)
 		
 	if mindist < 99999 and mindist > 100:
-		return closest
 		retreat = 0
+		return closest
 	elif mindist > 50 and retreat == 0:
 		return position
-	else:
-		retreat = 1
-		return Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * -10000
+	#else:
+		#retreat = 1
+		#return Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * -100
 
 
 func _on_navigation_timer_timeout():
