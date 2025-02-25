@@ -13,11 +13,6 @@ var barrel_rotation : float
 var angle_diff : float
 var rotation_amount : float
 
-
-
-func _ready():
-	add_to_group("players")
-
 func _physics_process(delta):
 	angle_to_mouse = rad_to_deg(get_angle_to(get_global_mouse_position()))
 	barrel_rotation = barrel.rotation_degrees
