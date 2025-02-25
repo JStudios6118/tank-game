@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dqie2ok3jnju6" path="res://scenes/tank.tscn" id="2_eb5ah"]
 [ext_resource type="PackedScene" uid="uid://b30q5lrk3qk38" path="res://scenes/enemy_tank.tscn" id="2_h7g41"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_acao4"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1vsqy"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)])
@@ -14,7 +14,7 @@ agent_radius = 0.0
 texture = ExtResource("1_uxfnw")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_acao4")
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_1vsqy")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
@@ -36,4 +36,3 @@ tile_set = SubResource("TileSet_acra7")
 
 [node name="EnemyTank" parent="." instance=ExtResource("2_h7g41")]
 position = Vector2(-112, -6)
-speed = 25
