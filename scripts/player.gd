@@ -7,9 +7,14 @@ extends CharacterBody2D
 @export var turn_speed : int = 3
 @export var barrel_turn_speed : int = 100
 
+@export_subgroup("Player Values")
+@export var max_health : int = 100
+@export var max_ammo : int = 10
+
 @export_subgroup("References")
 @export var body_pivot : Node2D
 @export var barrel : Node2D
+@export var ui_ref : PlayerUI
 
 @export_subgroup("Scenes")
 @export var tank_missile : PackedScene
@@ -19,6 +24,11 @@ var barrel_rotation : float
 var angle_diff : float
 var rotation_amount : float
 var dir : int
+
+var ammo : int = max_ammo
+
+func _ready():
+	ui_ref.set_ammo_bar(max_ammo)
 
 func _physics_process(delta):
 	angle_to_mouse = rad_to_deg(get_angle_to(get_global_mouse_position()))
@@ -54,6 +64,10 @@ func _physics_process(delta):
 		velocity = Vector2.ZERO
 	
 	if Input.is_action_just_pressed("shoot"):
+		if ammo == 0:
+			return
+		ammo -= 1
+		ui_ref.remove_ammo()
 		var temp = tank_missile.instantiate()
 		temp.global_position = $BarrelPivot/BarrelEnd.global_position
 		temp.global_rotation = $BarrelPivot/BarrelEnd.global_rotation

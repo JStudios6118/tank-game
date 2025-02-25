@@ -47,12 +47,13 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_04j33"]
 
-[node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("body_pivot", "barrel") groups=["players"]]
+[node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("body_pivot", "barrel", "ui_ref") groups=["players"]]
 motion_mode = 1
 wall_min_slide_angle = 0.785398
 script = ExtResource("1_cbmn7")
 body_pivot = NodePath("BodyPivot")
 barrel = NodePath("BarrelPivot")
+ui_ref = NodePath("Camera2D/ui")
 tank_missile = ExtResource("2_lhryp")
 
 [node name="BodyPivot" type="Node2D" parent="."]
@@ -70,6 +71,7 @@ shape = SubResource("CircleShape2D_04j33")
 zoom = Vector2(3, 3)
 
 [node name="ui" type="Control" parent="Camera2D"]
+z_index = 999
 layout_mode = 3
 anchors_preset = 0
 offset_left = -213.0
@@ -104,11 +106,15 @@ show_percentage = false
 
 [node name="AmmoBar" type="BoxContainer" parent="Camera2D/ui"]
 layout_mode = 0
-offset_left = -1.0
+offset_left = 1.0
 offset_top = 225.0
-offset_right = 191.0
+offset_right = 193.0
 offset_bottom = 233.0
 theme_override_constants/separation = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ui/AmmoBar"]
+layout_mode = 2
+texture = ExtResource("7_et6yw")
 
 [node name="BarrelPivot" type="Node2D" parent="."]
 
