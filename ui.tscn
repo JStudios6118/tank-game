@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0xqj3av0uskr"]
+
+[ext_resource type="Script" path="res://scenes/player_ui_manager.gd" id="1_mk7uv"]
+[ext_resource type="Texture2D" uid="uid://eqent0sqxe2j" path="res://textures/ammo_indicator.png" id="2_0qpqd"]
+[ext_resource type="Theme" uid="uid://xycgxu0mpq21" path="res://controlMeter.tres" id="3_l2s7y"]
+[ext_resource type="Theme" uid="uid://cye6bvpwxjlc3" path="res://resources/health.tres" id="4_wu160"]
+
+[node name="ui" type="Control"]
+layout_mode = 3
+offset_left = -191.0
+offset_top = -107.0
+offset_right = 192.0
+offset_bottom = 107.0
+script = ExtResource("1_mk7uv")
+ammo_indicator_icon = ExtResource("2_0qpqd")
+
+[node name="ControlMeter" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 383.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_l2s7y")
+value = 50.0
+show_percentage = false
+
+[node name="HealthMeter" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -1.0
+offset_top = 210.0
+offset_right = 107.0
+offset_bottom = 215.0
+theme = ExtResource("4_wu160")
+value = 25.0
+show_percentage = false
+
+[node name="AmmoBar" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_top = 201.0
+offset_right = 192.0
+offset_bottom = 209.0
+theme_override_constants/separation = 1
