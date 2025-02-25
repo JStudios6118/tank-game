@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var barrel : Node2D
 
 var next_waypoint: Vector2 = Vector2.ZERO
+var retreat
 
 func _physics_process(delta):
 	var target = _find_nearest()
@@ -17,7 +18,7 @@ func _physics_process(delta):
 	
 	
 	var body_rot = body_pivot.rotation_degrees
-	var next_pos = rad_to_deg(get_angle_to(nav_agent.get_next_path_position()))
+	var next_pos = rad_to_deg(get_angle_to(next_waypoint))
 	# Get the input direction and handle the rotation
 	
 	var angle_diff = wrapf(next_pos - body_rot, -180, 180)
@@ -27,18 +28,18 @@ func _physics_process(delta):
 	# Rotate the barrel based on the angle difference and rotation amount
 	barrel.rotation = get_angle_to(target)
 	
-	#if target != position:
-	
-	if abs(angle_diff) > rotation_amount:
-		body_pivot.rotation_degrees += sign(angle_diff) * turnSpeed
+	if target != position:
+		
+		if abs(angle_diff) > rotation_amount:
+			body_pivot.rotation_degrees += sign(angle_diff) * turnSpeed
+		else:
+			body_pivot.rotation_degrees = next_pos
+		
+		
+		velocity = Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * speed
+		
 	else:
-		body_pivot.rotation_degrees = next_pos
-	
-	
-	velocity = Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * speed
-	
-	#else:
-		#velocity = Vector2(0,0)
+		velocity = Vector2(0,0)
 	
 	
 	if Input.is_action_just_pressed("shoot"):
@@ -68,12 +69,12 @@ func _find_nearest():
 			mindist = dist
 			closest = current
 		
-	if mindist < 99999:
+	if mindist < 99999 and mindist > 100:
 		return closest
-	#elif mindist > 10:
-	#	return position
-	#else:
-	#	return position #Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * -100
+	elif mindist > 50 and retreat == 0:
+		return position
+	else:
+		return Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * -100
 
 
 func _on_navigation_timer_timeout():
