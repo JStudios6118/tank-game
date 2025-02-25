@@ -33,6 +33,7 @@ tile_map_data = PackedByteArray("AADk/+3/AAAAAAAAAADk/+7/AAAAAAAAAADk/+//AAAAAAA
 tile_set = SubResource("TileSet_acra7")
 
 [node name="Tank" parent="." instance=ExtResource("2_eb5ah")]
+turn_speed = 2
 
 [node name="EnemyTank" parent="." instance=ExtResource("2_h7g41")]
 position = Vector2(-112, -6)
