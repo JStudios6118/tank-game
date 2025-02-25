@@ -25,12 +25,15 @@ var angle_diff : float
 var rotation_amount : float
 var dir : int
 
+var health : int = max_health
 var ammo : int = max_ammo
 
 func _ready():
 	ui_ref.set_ammo_bar(max_ammo)
+	ui_ref.set_max_health(health)
 
 func _physics_process(delta):
+	ui_ref.set_health_bar(health)
 	angle_to_mouse = rad_to_deg(get_angle_to(get_global_mouse_position()))
 	barrel_rotation = barrel.rotation_degrees
 	# Normalize the angle difference to be within [-180, 180]

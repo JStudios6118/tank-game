@@ -8,6 +8,12 @@ extends Control
 func _process(_delta):
 	pass
 
+func set_max_health(amount):
+	$HealthMeter.max_value = amount
+
+func set_health_bar(amount):
+	$HealthMeter.value = amount
+
 func remove_ammo():
 	$AmmoBar.get_child(0).queue_free()
 
