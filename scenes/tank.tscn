@@ -47,7 +47,7 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_04j33"]
 
-[node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("body_pivot", "barrel")]
+[node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("body_pivot", "barrel") groups=["players"]]
 motion_mode = 1
 wall_min_slide_angle = 0.785398
 script = ExtResource("1_cbmn7")
