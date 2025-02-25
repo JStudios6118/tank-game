@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var speed : int = 100
-var turn_speed : int = 10
+var turn_speed : int = 3
 @export var body_pivot : Node2D
 @export var tank_missile : PackedScene
 var barrel_turn_speed : int = 100
