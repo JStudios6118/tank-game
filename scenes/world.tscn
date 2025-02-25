@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=4 uid="uid://lc072jsfttjg"]
 
-[ext_resource type="Texture2D" uid="uid://dudqu77nyd15v" path="res://textures/ground-tiles.png" id="1_uxfnw"]
+[ext_resource type="Texture2D" uid="uid://cpxrplidts7cy" path="res://textures/ground-tiles.png" id="1_uxfnw"]
 [ext_resource type="PackedScene" uid="uid://dqie2ok3jnju6" path="res://scenes/tank.tscn" id="2_eb5ah"]
-[ext_resource type="PackedScene" uid="uid://b30q5lrk3qk38" path="res://scenes/enemy_tank.tscn" id="2_h7g41"]
+[ext_resource type="PackedScene" uid="uid://bw78a4kj3coyc" path="res://scenes/enemy_tank.tscn" id="2_h7g41"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1vsqy"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -36,3 +36,16 @@ tile_set = SubResource("TileSet_acra7")
 
 [node name="EnemyTank" parent="." instance=ExtResource("2_h7g41")]
 position = Vector2(-112, -6)
+speed = 100
+
+[node name="EnemyTank2" parent="." instance=ExtResource("2_h7g41")]
+position = Vector2(500, -284)
+speed = 100
+
+[node name="EnemyTank3" parent="." instance=ExtResource("2_h7g41")]
+position = Vector2(-450, -315)
+speed = 100
+
+[node name="EnemyTank4" parent="." instance=ExtResource("2_h7g41")]
+position = Vector2(253, 257)
+speed = 100
