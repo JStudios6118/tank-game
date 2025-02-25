@@ -14,27 +14,20 @@ var next_waypoint: Vector2 = Vector2.ZERO
 func _physics_process(delta):
 	var target = _find_nearest()
 	nav_agent.target_position = target
-	var angle_to_mouse = rad_to_deg(get_angle_to(next_waypoint))
-	var barrelRotation = barrel.rotation_degrees
-	# Normalize the angle difference to be within [-180, 180]
-	var angle_diff = wrapf(angle_to_mouse - barrelRotation, -180, 180)
-	# Determine the rotation amount based on turn speed and delta time
-	var rotation_amount = barrelTurnSpeed * delta
 	
-	# Rotate the barrel based on the angle difference and rotation amount
-	#if abs(angle_diff) > rotation_amount:
-		#barrel.rotation_degrees += sign(angle_diff) * (rotation_amount)
-	#else:
-		#barrel.rotation_degrees = angle_to_mouse
+	
 	var body_rot = body_pivot.rotation_degrees
 	var next_pos = rad_to_deg(get_angle_to(next_waypoint))
 	# Get the input direction and handle the rotation
 	
-	angle_diff = wrapf(next_pos - body_rot, -180, 180)
+	var angle_diff = wrapf(next_pos - body_rot, -180, 180)
 	# Determine the rotation amount based on turn speed and delta time
-	rotation_amount = turnSpeed * delta
+	var rotation_amount = turnSpeed * delta
 	
 	# Rotate the barrel based on the angle difference and rotation amount
+	barrel.rotation = get_angle_to(target)
+	
+	
 	if abs(angle_diff) > rotation_amount:
 		body_pivot.rotation_degrees += sign(angle_diff) * turnSpeed
 	else:
