@@ -1,12 +1,18 @@
 extends CharacterBody2D
 
-var speed : int = 100
-var turn_speed : int = 3
+@export_category("Player Settings")
+
+@export_subgroup("Speed Settings")
+@export var speed : int = 100
+@export var turn_speed : int = 3
+@export var barrel_turn_speed : int = 100
+
+@export_subgroup("References")
 @export var body_pivot : Node2D
-@export var tank_missile : PackedScene
-var barrel_turn_speed : int = 100
 @export var barrel : Node2D
 
+@export_subgroup("Scenes")
+@export var tank_missile : PackedScene
 
 var angle_to_mouse : float
 var barrel_rotation : float
