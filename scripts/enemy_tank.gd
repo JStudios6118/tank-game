@@ -68,12 +68,16 @@ func _find_nearest():
 		if dist < mindist:
 			mindist = dist
 			closest = current
+			
+	print(retreat)
 		
 	if mindist < 99999 and mindist > 100:
 		return closest
 	elif mindist > 50 and retreat == 0:
 		return position
 	else:
+		if retreat == 0:
+			$RetreatTimer.start()
 		retreat = 1
 		return Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * -100
 
