@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://doxw0x2oabmru"]
 
 [ext_resource type="Script" path="res://scripts/tank_missile.gd" id="1_b7rui"]
-[ext_resource type="Texture2D" uid="uid://bsr3kircbgka" path="res://textures/missile.png" id="1_lewvq"]
+[ext_resource type="Texture2D" uid="uid://cb0fflxqet24s" path="res://textures/missile.png" id="1_lewvq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnhmw"]
 size = Vector2(6, 4)
