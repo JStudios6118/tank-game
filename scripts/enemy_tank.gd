@@ -69,22 +69,18 @@ func _find_nearest():
 			mindist = dist
 			closest = current
 			
+		
 	print(retreat)
 		
 	if mindist < 99999 and mindist > 100:
 		return closest
+		retreat = 0
 	elif mindist > 50 and retreat == 0:
 		return position
 	else:
-		if retreat == 0:
-			$RetreatTimer.start()
 		retreat = 1
-		return Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * -100
+		return Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * -10000
 
 
 func _on_navigation_timer_timeout():
 	next_waypoint = nav_agent.get_next_path_position()
-
-
-func _on_retreat_timer_timeout() -> void:
-	retreat = 0
