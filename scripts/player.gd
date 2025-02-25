@@ -15,6 +15,7 @@ extends CharacterBody2D
 @export var body_pivot : Node2D
 @export var barrel : Node2D
 @export var ui_ref : PlayerUI
+@export var TankBody : AnimatedSprite2D
 
 @export_subgroup("Scenes")
 @export var tank_missile : PackedScene
@@ -63,8 +64,10 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("forward"):
 		velocity = Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * speed
+		TankBody.play()
 	else:
 		velocity = Vector2.ZERO
+		TankBody.pause()
 	
 	if Input.is_action_just_pressed("shoot"):
 		if ammo == 0:

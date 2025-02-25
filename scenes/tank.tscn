@@ -42,18 +42,19 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 4.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_04j33"]
 
-[node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("body_pivot", "barrel", "ui_ref") groups=["players"]]
+[node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("body_pivot", "barrel", "ui_ref", "TankBody") groups=["players"]]
 motion_mode = 1
 wall_min_slide_angle = 0.785398
 script = ExtResource("1_cbmn7")
 body_pivot = NodePath("BodyPivot")
 barrel = NodePath("BarrelPivot")
 ui_ref = NodePath("Camera2D/ui")
+TankBody = NodePath("BodyPivot/TankBody")
 tank_missile = ExtResource("2_lhryp")
 
 [node name="BodyPivot" type="Node2D" parent="."]
