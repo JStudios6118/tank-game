@@ -2,7 +2,7 @@ extends Node2D
 
 @export var barrel_pivot : Node2D
 
-var speed = 1
+var speed = 0.1
 var direction : float
 
 
@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	position.x += cos(direction) * speed
 	position.y += sin(direction) * speed
 
