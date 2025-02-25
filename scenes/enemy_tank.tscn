@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bw78a4kj3coyc"]
+[gd_scene load_steps=11 format=3 uid="uid://b30q5lrk3qk38"]
 
 [ext_resource type="Script" path="res://scripts/enemy_tank.gd" id="1_2hlyn"]
-[ext_resource type="Texture2D" uid="uid://b6cbapvvoadmg" path="res://textures/tank-animation.png" id="1_cux0d"]
-[ext_resource type="Texture2D" uid="uid://dq5f3638aawax" path="res://textures/tank-barrel.png" id="2_cabmt"]
+[ext_resource type="Texture2D" uid="uid://br7340g3ixsjj" path="res://textures/tank-animation.png" id="1_cux0d"]
+[ext_resource type="Texture2D" uid="uid://d3e5pggl1flkg" path="res://textures/tank-barrel.png" id="2_cabmt"]
 [ext_resource type="PackedScene" uid="uid://doxw0x2oabmru" path="res://scenes/tank_missile.tscn" id="2_ecots"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyaq1"]
@@ -88,4 +88,7 @@ debug_path_custom_line_width = 2.0
 wait_time = 0.5
 autostart = true
 
+[node name="RetreatTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="NavigationTimer" to="." method="_on_navigation_timer_timeout"]
+[connection signal="timeout" from="RetreatTimer" to="." method="_on_retreat_timer_timeout"]

@@ -10,7 +10,7 @@ extends CharacterBody2D
 @export var barrel : Node2D
 
 var next_waypoint: Vector2 = Vector2.ZERO
-var retreat
+var retreat : int = 0
 
 func _physics_process(delta):
 	var target = _find_nearest()
@@ -74,8 +74,13 @@ func _find_nearest():
 	elif mindist > 50 and retreat == 0:
 		return position
 	else:
+		retreat = 1
 		return Vector2(cos(body_pivot.rotation), sin(body_pivot.rotation)) * -100
 
 
 func _on_navigation_timer_timeout():
 	next_waypoint = nav_agent.get_next_path_position()
+
+
+func _on_retreat_timer_timeout() -> void:
+	retreat = 0
